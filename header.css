@@ -24,8 +24,8 @@
    padding: 10px 15px 10px 15px;
    margin-right: 2%;
    cursor: default;
-   visibility: hidden;
-   display: none;
+   border-top-style: solid;
+   border-top-color: rgb(122, 16, 18);
 }
 
 .headerUl li a {
@@ -131,7 +131,6 @@
 	}
 	
 	#description {
-   	visibility: visible;
-   	display: inline;
+		border: none;	
 	}
 }
