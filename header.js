@@ -32,7 +32,8 @@ function setActiveClass() {
 	try {
 		pageId += document.location.href.match(/[^\/]+$/)[0].split(".")[0];
 	} catch (err) {
-		pageId = $(".headerUl").firstChild().attr("id");
+		pageId = $(".headerUl").children().first().children().first().attr("href");
+		pageId = "#"+pageId.split(".")[0];
 	}
 	$(pageId).attr("class", "aktiv");
 }
@@ -42,7 +43,6 @@ function setElementsSize() {
 	if ($(window).width() < 800) {
 		$(".headerUl").css("width", descriptionWidth);
 		$(".headerUl").children().css("width", descriptionWidth);
-		//$(".headerUl:last-child").css("width", descriptionWidth);
 	} else {
 		$(".headerUl").css("width", "85%");
 		$(".headerUl").children().css("width", descriptionWidth);
