@@ -38,13 +38,15 @@ function setActiveClass() {
 }
 
 function setElementsSize() {
-	var newWidth = $("#description").width()+30;
+	var descriptionWidth = $("#description").width();
 	if ($(window).width() < 800) {
-		$(".headerUl").css("width", newWidth);
+		$(".headerUl").css("width", descriptionWidth);
+		$(".headerUl").children().css("width", descriptionWidth);
+		//$(".headerUl:last-child").css("width", descriptionWidth);
 	} else {
 		$(".headerUl").css("width", "85%");
+		$(".headerUl").children().css("width", descriptionWidth);
 	}
-	$(".headerUl").children().css("width", newWidth);
 }
 
 function toggleMenu() {

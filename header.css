@@ -14,6 +14,7 @@
 
 .headerUl p {
 	text-align: center;
+	padding: 0px 15px 0px 15px;
 }
 
 .headerUl li {
@@ -21,12 +22,12 @@
 	cursor: pointer;
 	color: whitesmoke;
 	float: left;
+	text-align: center;
 }
 
 #description {
 	float: right;
 	padding: 10px 0px 10px 0px;
-	margin-right: 2%;
    cursor: default;
    border-top-style: solid;
    border-top-color: rgb(122, 16, 18);
@@ -137,6 +138,5 @@
 	#description {
 		float: right;
 		border: none;
-		padding: 10px 15px 10px 15px;
 	}
 }
