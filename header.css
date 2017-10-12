@@ -35,7 +35,7 @@
 
 .headerUl li a {
     display: block;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 5px 10px 5px;
     text-decoration: none;
     color: whitesmoke;
 }
@@ -138,5 +138,10 @@
 	#description {
 		float: right;
 		border: none;
+	}
+	
+	#description p {
+		vertical-align: middle;
+		margin: 0;
 	}
 }

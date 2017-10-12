@@ -1,5 +1,10 @@
 <?php
-	$Lines = explode("\n", file_get_contents("header.conf"));
+	$configs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator("./"), RecursiveIteratorIterator::SELF_FIRST);
+	$configPath = iterator_to_array(new RegexIterator($configs, '/^.+header.conf$/i', RecursiveRegexIterator::GET_MATCH));
+	$configPath = array_shift($configPath)[0];
+	$headerDirPath = explode("header.conf", $configPath)[0];
+
+	$Lines = explode("\n", file_get_contents($configPath));
 	$Elements = array();
 	$Description = "Beschreibung";
 	for ($i = 0; $i < count($Lines); $i++) {
@@ -13,12 +18,14 @@
 			default: break;
 		}
 	}
-	echo '<div class="headerDiv"><div id="menuButtonDiv"><button id="menuButton" onclick="toggleMenu()"><h3>Menu</h3></button></div><ul class="headerUl">';
+	echo '<div class="headerDiv"><div id="menuButtonDiv"><button id="menuButton" onclick="toggleMenu()"><h3>Menu</h3></button></div>';
+	echo '<ul class="headerUl">';
 	foreach ($Elements as $Element) {
 		$Parts = explode(":", $Element);
 		echo '<li><a href="'.$Parts[1].'">'.$Parts[0].'</a></li>';
 	}
-	echo '<li id="description"><p>'.$Description.'<p></li></ul><img src="./Images/banner.png" alt="Banner konnte nicht geladen werden!" draggable="false"/></div>';
+	echo '<li id="description"><p>'.$Description.'</p></li></ul>';
+	echo '<img src="'.$headerDirPath.'/Images/banner.png" alt="Banner konnte nicht geladen werden!" draggable="false"/></div>';
 	
 	function getElements($startIndex) {
 		global $Lines, $Elements;
