@@ -1,12 +1,14 @@
 $(window).on("load", function () {
-	toggleMenuDependingOnWindowSize();
 	setHeaderIds();
 	setActiveClass();
+	setElementsSize();
+	toggleMenuDependingOnWindowSize();
 });
 
 // Watch for window resizing event
 $(window).resize(function() {
 	toggleMenuDependingOnWindowSize();
+	setElementsSize();
 });
 
 function toggleMenuDependingOnWindowSize() {
@@ -33,6 +35,16 @@ function setActiveClass() {
 		pageId = $(".headerUl").firstChild().attr("id");
 	}
 	$(pageId).attr("class", "aktiv");
+}
+
+function setElementsSize() {
+	var newWidth = $("#description").width()+30;
+	if ($(window).width() < 800) {
+		$(".headerUl").css("width", newWidth);
+	} else {
+		$(".headerUl").css("width", "85%");
+	}
+	$(".headerUl").children().css("width", newWidth);
 }
 
 function toggleMenu() {

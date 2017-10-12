@@ -6,23 +6,27 @@
 .headerUl {
 	list-style-type: none;
 	z-index: 42; /*should always be the biggest value, in order to overlap all other elements*/
-	padding-left: 1.5%;
 	width: 8em;
 	position: fixed;
    box-shadow: 0px 5px 4px rgba(0, 0, 0, .35);
    background-color: black; /*rgb(188, 135, 66);/*my creation of dark burlywood*/
 }
 
+.headerUl p {
+	text-align: center;
+}
+
 .headerUl li {
-	display: inline;
+	display: initial;
 	cursor: pointer;
 	color: whitesmoke;
+	float: left;
 }
 
 #description {
 	float: right;
-   padding: 10px 15px 10px 15px;
-   margin-right: 2%;
+	padding: 10px 0px 10px 0px;
+	margin-right: 2%;
    cursor: default;
    border-top-style: solid;
    border-top-color: rgb(122, 16, 18);
@@ -131,6 +135,8 @@
 	}
 	
 	#description {
-		border: none;	
+		float: right;
+		border: none;
+		padding: 10px 15px 10px 15px;
 	}
 }
