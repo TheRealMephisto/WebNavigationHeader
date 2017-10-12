@@ -23,6 +23,7 @@
 	float: right;
    padding: 10px 15px 10px 15px;
    margin-right: 2%;
+   cursor: default;
    visibility: hidden;
    display: none;
 }
@@ -130,9 +131,6 @@
 	}
 	
 	#description {
-		float: right;
-   	padding: 10px 15px 10px 15px;
-   	margin-right: 2%;
    	visibility: visible;
    	display: inline;
 	}
