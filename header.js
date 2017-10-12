@@ -27,9 +27,10 @@ function setHeaderIds() {
 
 function setActiveClass() {
 	var pageId = "#";
-	pageId += document.location.href.match(/[^\/]+$/)[0].split(".")[0];
-	if (pageId == null) {
-		pageId = "#Hauptseite";
+	try {
+		pageId += document.location.href.match(/[^\/]+$/)[0].split(".")[0];
+	} catch (err) {
+		pageId = $(".headerUl").firstChild().attr("id");
 	}
 	$(pageId).attr("class", "aktiv");
 }

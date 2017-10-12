@@ -1,7 +1,7 @@
 <?php
 	$Lines = explode("\n", file_get_contents("header.conf"));
 	$Elements = array();
-	$Description = "Beschreibung:description";
+	$Description = "Beschreibung";
 	for ($i = 0; $i < count($Lines); $i++) {
 		switch($Lines[$i]) {
 			case "[Elements]":
@@ -18,7 +18,7 @@
 		$Parts = explode(":", $Element);
 		echo '<li><a href="'.$Parts[1].'">'.$Parts[0].'</a></li>';
 	}
-	echo '<li id="description">Description</li></ul><img src="./Images/banner.png" alt="Banner konnte nicht geladen werden!" draggable="false"/></div>';
+	echo '<li id="description">'.$Description.'</li></ul><img src="./Images/banner.png" alt="Banner konnte nicht geladen werden!" draggable="false"/></div>';
 	
 	function getElements($startIndex) {
 		global $Lines, $Elements;
