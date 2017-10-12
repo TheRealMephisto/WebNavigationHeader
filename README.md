@@ -12,15 +12,15 @@ Your server needs to provide php!<br>
 Exchange the banner.png in the Images directory and edit the header.conf to match your needs.<br>
 For an example implementation visit my [website](https://www.wechsel-wissen.de) and have a look at the source code.
 
-## Configuration
+### Configuration
 
 All configurations are made in the header.conf file.<br>
 
-### Navigation menu entries
+#### Navigation menu entries
 The navigation elements of the menu are defined in the Elements section.<br>
 "Example:example.php" will create a menu entry displaying "Example" and linking to the page "example.php".
 
-### Page Description
+#### Page Description
 Write a short description inside the Description section.
 
 ## License
